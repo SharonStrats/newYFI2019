@@ -1,8 +1,11 @@
 const express = require('express');
-const app = express();  
+const app = express();  /* you can have more than one */
 
+/* Route handler */
 app.get('/', (req, res) => {
 	res.send({hi: 'there'});
 });
 
-app.listen(5000);
+/* Dynamically configure port */
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);

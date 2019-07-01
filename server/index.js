@@ -6,8 +6,9 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport'); //this runs the codes in that file
 
-
+//useNewUrlParser gets rid of deprecation error
 mongoose.connect(keys.mongoURI, {useNewUrlParser: true});
+
 const app = express();  /* you can have more than one */
 
 //allows an array of keys and picks a different one each time
